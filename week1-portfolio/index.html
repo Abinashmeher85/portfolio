@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ansh Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= LOADER ================= -->
+<div id="loader">
+    <div class="loader-circle"></div>
+</div>
+
+<!-- ================= SCROLL PROGRESS ================= -->
+<div class="progress-bar"></div>
+
+<!-- ================= CUSTOM CURSOR ================= -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<!-- ================= PARTICLES BACKGROUND ================= -->
+<div id="particles-js"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <h2 class="logo">Anshul Abinash Meher</h2>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <!-- Theme Toggle -->
+    <button id="themeToggle" class="theme-btn">🌙</button>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Hello, I'm <span>Anshul</span></h1>
+        <h2 class="typing"></h2>
+        <p>Building modern and interactive web experiences.</p>
+
+        <div class="social-icons">
+    <a href="https://github.com/Abinashmeher85" target="_blank" class="social-btn">
+        🌐
+    </a>
+
+    <a href="https://www.linkedin.com/in/anshul-abinash-meher-47071b283" target="_blank" class="social-btn">
+        💼
+    </a>
+
+    <a href="https://instagram.com/abinash_anshul" target="_blank" class="social-btn">
+        📷
+    </a>
+</div>
+
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+
+    <div class="profile-container">
+        <div class="gradient-border">
+            <img src="images/profile.png" alt="Ansh Profile" class="profile-img">
+        </div>
+    </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section reveal">
+    <h2>About Me</h2>
+    <p>I am a passionate and dedicated web developer who enjoys creating modern, responsive, and user-friendly web applications. 
+        I have a strong interest in building clean and interactive digital experiences using HTML, CSS, and JavaScript..</p>
+
+        <p>I focus on writing structured, maintainable code and continuously improving my skills
+             by learning new technologies and exploring real-world projects. 
+            From designing responsive layouts to implementing dynamic features, 
+            I enjoy turning ideas into functional and visually appealing websites.</p>
+
+        <p> Apart from development, I believe in consistency, problem-solving, and continuous learning.
+         My goal is to grow as a full-stack developer and contribute to impactful projects that make a difference.</p>
+    
+
+    <div class="counter-container">
+        <div class="counter-box">
+            <h3 class="counter" data-target="10">0</h3>
+            <p>Projects</p>
+        </div>
+        <div class="counter-box">
+            <h3 class="counter" data-target="2">0</h3>
+            <p>Years Learning</p>
+        </div>
+        <div class="counter-box">
+            <h3 class="counter" data-target="5">0</h3>
+            <p>Skills</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section reveal">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Modern responsive design.</p>
+            <button class="btn">View</button>
+        </div>
+
+        <div class="card">
+            <h3>Credit Fraud Detection</h3>
+            <p>Machine Learning project.</p>
+            <button class="btn">View</button>
+        </div>
+
+        <div class="card">
+            <h3>Bus Reservation system</h3>
+            <p>Java backend system.</p>
+            <button class="btn">View</button>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section reveal contact-section">
+    <h2>Contact Me</h2>
+
+    <form class="contact-form" id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <p id="successMsg" class="success-msg">Message Sent Successfully! 🚀</p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>© 2026 Ansh | All Rights Reserved</p>
+</footer>
+
+<!-- Scroll To Top -->
+<button id="scrollTop">↑</button>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script src="js/navigation.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": { "enable": true, "value_area": 800 }
+    },
+    "color": { "value": "#00f2fe" },
+    "shape": { "type": "circle" },
+    "opacity": {
+      "value": 0.5,
+      "random": false
+    },
+    "size": {
+      "value": 3,
+      "random": true
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#00f2fe",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 3,
+      "direction": "none",
+      "out_mode": "out"
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": { "enable": true, "mode": "repulse" },
+      "onclick": { "enable": true, "mode": "push" }
+    },
+    "modes": {
+      "repulse": { "distance": 100 },
+      "push": { "particles_nb": 4 }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+
+</body>
+</html>

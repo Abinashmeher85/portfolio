@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .profile-img {
+        width: 200px;
+    }
+
+    .project-grid {
+        flex-direction: column;
+    }
+}
