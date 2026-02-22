@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Task Manager</h1>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">Toggle Theme</button>
+            </div>
+        </header>
+        
+        <main>
+            <section class="task-input-section">
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="Enter a new task..." required>
+                    <input type="date" id="task-date" required>
+                    <select id="task-priority">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button type="submit" id="add-task-btn">Add Task</button>
+                </form>
+            </section>
+            
+            <section class="task-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </section>
+            
+            <section class="task-list-section">
+                <ul id="task-list" class="task-list">
+                    <!-- Tasks will be rendered here -->
+                </ul>
+            </section>
+            
+            <section class="task-stats">
+                <div class="stat">
+                    <span id="total-tasks">0</span> Total
+                </div>
+                <div class="stat">
+                    <span id="pending-tasks">0</span> Pending
+                </div>
+                <div class="stat">
+                    <span id="completed-tasks">0</span> Completed
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
