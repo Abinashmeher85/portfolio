@@ -1,0 +1,195 @@
+/**
+ * Weather Icons Styles
+ * Custom weather condition icons using CSS
+ */
+
+/* Base weather icon */
+.weather-icon {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sun icon */
+.weather-icon.sun::before {
+    content: "☀️";
+    font-size: inherit;
+}
+
+/* Cloud icon */
+.weather-icon.cloud::before {
+    content: "☁️";
+    font-size: inherit;
+}
+
+/* Partly cloudy (cloud-sun) */
+.weather-icon.cloud-sun::before {
+    content: "⛅";
+    font-size: inherit;
+}
+
+/* Cloud rain */
+.weather-icon.cloud-rain::before {
+    content: "🌧️";
+    font-size: inherit;
+}
+
+/* Heavy rain / showers */
+.weather-icon.cloud-showers-heavy::before {
+    content: "⛈️";
+    font-size: inherit;
+}
+
+/* Snowflake / snow */
+.weather-icon.snowflake::before {
+    content: "❄️";
+    font-size: inherit;
+}
+
+/* Thunder / bolt */
+.weather-icon.bolt::before {
+    content: "⚡";
+    font-size: inherit;
+}
+
+/* Fog / smog */
+.weather-icon.smog::before {
+    content: "🌫️";
+    font-size: inherit;
+}
+
+/* Question mark for unknown */
+.weather-icon.question::before {
+    content: "❓";
+    font-size: inherit;
+}
+
+/* Additional weather states using data attributes */
+.weather-icon[data-condition="clear"]::before,
+.weather-icon[data-condition="sunny"]::before {
+    content: "☀️";
+}
+
+.weather-icon[data-condition="mostly-clear"]::before {
+    content: "🌤️";
+}
+
+.weather-icon[data-condition="partly-cloudy"]::before {
+    content: "⛅";
+}
+
+.weather-icon[data-condition="overcast"]::before {
+    content: "☁️";
+}
+
+.weather-icon[data-condition="fog"]::before,
+.weather-icon[data-condition="foggy"]::before {
+    content: "🌫️";
+}
+
+.weather-icon[data-condition="drizzle"]::before {
+    content: "🌦️";
+}
+
+.weather-icon[data-condition="rain"]::before {
+    content: "🌧️";
+}
+
+.weather-icon[data-condition="heavy-rain"]::before {
+    content: "⛈️";
+}
+
+.weather-icon[data-condition="snow"]::before {
+    content: "🌨️";
+}
+
+.weather-icon[data-condition="thunderstorm"]::before {
+    content: "⛈️";
+}
+
+/* Night variants */
+.weather-icon.night.sun::before {
+    content: "🌙";
+}
+
+.weather-icon.night.cloud::before {
+    content: "☁️";
+}
+
+.weather-icon.night.cloud-rain::before {
+    content: "🌧️";
+}
+
+/* Animated sun */
+@keyframes sun-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.weather-icon.sun {
+    animation: sun-pulse 3s ease-in-out infinite;
+}
+
+/* Animated rain drops */
+@keyframes rain-drop {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(10px); opacity: 0; }
+}
+
+.weather-icon.cloud-rain::after,
+.weather-icon.cloud-showers-heavy::after {
+    content: "💧";
+    position: absolute;
+    animation: rain-drop 1s ease-in-out infinite;
+}
+
+/* Animated snowflake */
+@keyframes snow-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.weather-icon.snowflake {
+    animation: snow-spin 4s linear infinite;
+}
+
+/* Animated thunder */
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.weather-icon.bolt {
+    animation: flash 2s ease-in-out infinite;
+}
+
+/* Large icon variant */
+.weather-icon.large {
+    font-size: 5rem;
+}
+
+.weather-icon.large::before {
+    font-size: 5rem;
+}
+
+/* Medium icon variant */
+.weather-icon.medium {
+    font-size: 2.5rem;
+}
+
+.weather-icon.medium::before {
+    font-size: 2.5rem;
+}
+
+/* Small icon variant */
+.weather-icon.small {
+    font-size: 1.5rem;
+}
+
+.weather-icon.small::before {
+    font-size: 1.5rem;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Check Weather Worldwide</title>
+    <meta name="description" content="A beautiful weather app to check current weather and forecast worldwide">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/weather-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="dark-mode">
+
+    <!-- Loader -->
+    <div id="loader" class="loader">
+        <div class="loader-ring"></div>
+    </div>
+
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="bg-gradient bg-gradient-1"></div>
+        <div class="bg-gradient bg-gradient-2"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-cloud-moon"></i> Weather
+        </div>
+        <div class="header-controls">
+            <button id="unit-toggle" class="unit-toggle" title="Toggle Units">°C</button>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Search Section -->
+        <div class="search-container">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    class="search-input" 
+                    placeholder="Search for a city..."
+                    autocomplete="off"
+                >
+                <button id="search-btn" class="search-btn">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+            <!-- Search Results Dropdown -->
+            <div id="search-results" class="search-results"></div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading">
+            <div class="loading-spinner"></div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" class="error-message"></div>
+
+        <!-- Weather Section -->
+        <section id="current-weather" class="weather-section">
+            <!-- Current Weather Card -->
+            <div class="current-weather">
+                <div class="weather-header">
+                    <div class="location-info">
+                        <h2 id="current-city">--</h2>
+                        <span id="current-country" class="country">--</span>
+                    </div>
+                    <div class="current-date" id="current-date">--</div>
+                </div>
+
+                <div class="weather-main">
+                    <div id="weather-icon" class="weather-icon sun"></div>
+                    <div class="temperature-display">
+                        <div id="temperature" class="temperature">--<span class="unit">°C</span></div>
+                        <div id="feels-like" class="feels-like">Feels like --°C</div>
+                    </div>
+                </div>
+
+                <div id="weather-description" class="weather-description">--</div>
+
+                <!-- Weather Details Grid -->
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <div id="humidity" class="detail-value">--%</div>
+                        <div class="detail-label">Humidity</div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <div id="wind" class="detail-value">-- km/h</div>
+                        <div class="detail-label">Wind</div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-gauge-high"></i>
+                        <div id="pressure" class="detail-value">-- hPa</div>
+                        <div class="detail-label">Pressure</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forecast Section -->
+            <div class="forecast-section">
+                <h3><i class="fas fa-calendar-week"></i> 7-Day Forecast</h3>
+                <div id="forecast" class="forecast-container">
+                    <!-- Forecast days will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Recent Searches -->
+            <div class="recent-searches-section">
+                <h3><i class="fas fa-history"></i> Recent Searches</h3>
+                <div id="recent-searches" class="recent-searches-list">
+                    <!-- Recent searches will be inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Powered by <a href="https://open-meteo.com/" target="_blank">Open-Meteo API</a></p>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/config.js"></script>
+    <script src="js/weatherService.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        // Hide loader when page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                if (loader) {
+                    loader.classList.add('hidden');
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
